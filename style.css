@@ -47,13 +47,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.4s ease;
   }
 
   .todo li{
     font-family: "Raleway", sans-serif;
     flex: 1; 
   }
-  .delete-btn, .complete-btn{
+  .delete-btn, .check-btn{
     background: #f84434;
     color: black;
     border: none;
@@ -62,9 +63,16 @@
     font-size: 1rem;
 
   }
-  .complete-btn{
+  .check-btn{
     background:darkseagreen;
   }
   .todo-item{
     padding: 0rem 0.5rem;
+  }
+  .fa-trash, .fa-check {
+    pointer-events: none;
+  }
+  .completed{
+    text-decoration: line-through;
+    opacity: 0.7;
   }

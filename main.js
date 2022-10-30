@@ -44,8 +44,8 @@ function deleteCheck(event){
         removeLocalTodos(event.target.parentElement);
     }
     //Check
-    if(item.classList[0] === "check-btn"){
-        item.parentElement.classList.toggle("checked");
+    if(event.target.classList[0] === "check-btn"){
+        event.target.parentElement.classList.toggle("checked");
     }
 }
 function filterTodo(event){

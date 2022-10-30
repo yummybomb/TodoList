@@ -41,7 +41,7 @@ function deleteCheck(event){
     //Delete
     if (event.target.classList[0] === "delete-btn"){
         event.target.parentElement.remove(); // Delete Item in todoList
-        removeLocalTodos(todo);
+        removeLocalTodos(event.target.parentElement);
     }
     //Check
     if(item.classList[0] === "check-btn"){
@@ -89,10 +89,11 @@ function removeLocalTodos(todo) {
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
-    const todoIndex = ;
+    const todoIndex = todo.children[0].innerText
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
 }
+
 function getTodos() {
     let todos;
     if (localStorage.getItem("todos") === null) {

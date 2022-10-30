@@ -1,6 +1,8 @@
+
 //Selectors
 const todoTxt = document.querySelector('.todo-txt');
 const todoButton = document.querySelector('.todo-button');
+const reverse = document.querySelector('.reverse-button')
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
 //Event Listeners
@@ -8,6 +10,8 @@ document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
+reverse.addEventListener('click', reverseTodos);
+
 
 //Funcs
 function addTodo(event){
@@ -40,7 +44,7 @@ function addTodo(event){
 function deleteCheck(event){
     //Delete
     if (event.target.classList[0] === "delete-btn"){
-        event.target.parentElement.remove(); // Delete Item in todoList
+        event.target.parentElement.remove(); // remove item in todoList
         removeLocalTodos(event.target.parentElement);
     }
     //Check
@@ -102,10 +106,10 @@ function getTodos() {
       todos = JSON.parse(localStorage.getItem("todos"));
     }
     todos.forEach(function(todo) {
-      //Create todo div
+      //make todo div
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("todo");
-      //Create list
+      //make list
       const newTodo = document.createElement("li");
       newTodo.innerText = todo;
       newTodo.classList.add("todo-item");
@@ -124,4 +128,19 @@ function getTodos() {
       //attach todo
       todoList.appendChild(todoDiv);
     });
+  }
+  function reverseTodos(){
+    let todos;
+    var temp = [];
+    if (localStorage.getItem("todos") === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    for (let i = todos.length-1; i >=0 ; i--){
+        temp.push(todos[i]);
+    }
+    todos = temp;
+    localStorage.setItem("todos", JSON.stringify(todos));
+    location.reload();
   }

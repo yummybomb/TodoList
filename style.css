@@ -29,9 +29,11 @@
     padding:10px;
     position: relative;
     margin-right: 8px;
+  }
+  .reverse-button{
+    margin-left: 10px;
+  }
 
-    
-    
   }
   select {
     -webkit-appearance: none;

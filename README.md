@@ -1,2 +1,2 @@
 # TodoList
-This is my todoList!
+This is my todolist

@@ -1,6 +1,6 @@
   header {
   
-    padding: 60px;
+    padding: 3%;
     text-align: center;
     background: #f84434;
     color: white;
@@ -10,16 +10,17 @@
   }
 
   #strInput{
+    
     font-family: "Raleway", sans-serif;
     font-size:20px;
     font-weight: 300;
     padding:10px;
     position: relative;
-    width:80%;
     
     
   }
   #button {
+    
     display:inline-block;
     text-align: center;
     font-family: "Raleway", sans-serif;
@@ -27,9 +28,51 @@
     font-weight: 300;
     padding:10px;
     position: relative;
-    width: 15%
-  
+    margin-right: 8px;
+
+    
+    
   }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    
+  }
+  .select{
+    position: relative;
+    overflow: hidden;
+    
+  }
+  select{
+    width: 150px;
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+    font-size:20px;
+    cursor: pointer;
+    padding: 10px;
+    height: 46.5px;
+
+    
+  }
+  .select::after{
+    content: "\25BC";
+    position: absolute;
+    background: red;
+    top: 0;
+    right: 0;
+    padding: 7px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  .select:hover::after{
+    background: whitesmoke;
+    color: red;
+
+  }
+
   .todo-container{
     display: flex;
     justify-content: center;
@@ -41,7 +84,7 @@
   }
   .todo{
     margin: 0.5rem;
-    background: whitesmoke;
+    background: lightgrey;
     color: black;
     font-size: 2rem;
     display: flex;
@@ -75,4 +118,11 @@
   .completed{
     text-decoration: line-through;
     opacity: 0.7;
+  }
+  .container{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
   }

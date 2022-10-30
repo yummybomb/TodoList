@@ -2,6 +2,7 @@
 const todoTxt = document.querySelector('.todo-txt');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterOption = document.querySelector('.filter-todo');
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
@@ -42,4 +43,7 @@ function deleteCheck(event){
     if(item.classList[0] === "check-btn"){
         item.parentElement.classList.toggle("completed");
     }
+}
+function filterTodo(e){
+    const todos = todoList.childNodes;
 }
